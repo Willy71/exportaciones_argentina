@@ -1,6 +1,6 @@
-pandas
-plotly==5.19.0
 streamlit
+pandas
+plotly
 yfinance
 pandas-datareader
 prophet
