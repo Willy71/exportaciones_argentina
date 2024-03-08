@@ -10,14 +10,14 @@ st.set_page_config(
 )
 
 # Check if you've already initialized the data
-if 'df1' not in st.session_state:
+#if 'df1' not in st.session_state:
     # Get the data if you haven't
-    df1 = pd.read_csv('datasets\exportaciones_anual_Region.csv')
+df2 = pd.read_csv('datasets\exportaciones_anual_Region.csv')
     # Save the data to session state
-    st.session_state.df1 = df1
+#    st.session_state.df1 = df1
 
 # Retrieve the data from session state
-df1 = st.session_state.df1
+#df1 = st.session_state.df1
 
 page_bg_img = f"""
 <style>
@@ -70,7 +70,7 @@ if len(countries) > 2:
     st.error("Por favor, seleccione como máximo dos regiones para comparar.")
 else:
     # Aplicar filtro
-    df_selection = df1[df1["Region"].isin(countries)]
+    df_selection = df2[df2["Region"].isin(countries)]
 
     # Hacer melt de los datos
     df_melted = pd.melt(df_selection, id_vars=["Region"], var_name="Año", value_name="Valor")
