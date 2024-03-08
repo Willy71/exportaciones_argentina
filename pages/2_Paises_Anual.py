@@ -12,7 +12,7 @@ st.set_page_config(
 # Check if you've already initialized the data
 #if 'df' not in st.session_state:
     # Get the data if you haven't
-df = pd.read_csv('datasets\exportaciones_anual_Pais.csv')
+df1 = pd.read_csv('datasets\exportaciones_anual_Pais.csv')
     # Save the data to session state
 #    st.session_state.df = df
 
@@ -62,7 +62,7 @@ def centrar_texto(texto, tamanho, color):
 # Filtros por país
 countries = st.sidebar.multiselect(
     "Seleccione uno o dos países para comparar:  ",
-    options=df['Pais'].unique(),
+    options=df1['Pais'].unique(),
     default=[]
 )
 
@@ -70,7 +70,7 @@ if len(countries) > 2:
     st.error("Por favor, seleccione como máximo dos países para comparar.")
 else:
     # Aplicar filtro
-    df_selection = df[df["Pais"].isin(countries)]
+    df_selection = df1[df1["Pais"].isin(countries)]
 
     # Hacer melt de los datos
     df_melted = pd.melt(df_selection, id_vars=["Pais"], var_name="Año", value_name="Valor")
