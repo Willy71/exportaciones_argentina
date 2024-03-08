@@ -12,14 +12,14 @@ st.set_page_config(
 )
 
 # Check if you've already initialized the data
-if 'df6' not in st.session_state:
+if 'df' not in st.session_state:
     # Get the data if you haven't
-    df6 = pd.read_csv('datasets\exportaciones_anual_porcentaje.csv')
+    df = pd.read_csv('exportaciones_anual_porcentaje.csv')
     # Save the data to session state
-    st.session_state.df6 = df6
+    st.session_state.df = df
 
 # Retrieve the data from session state
-df6 = st.session_state.df6
+df = st.session_state.df
 
 def centrar_imagen(imagen, ancho):
     # Aplicar estilo CSS para centrar la imagen con Markdown
@@ -38,8 +38,8 @@ def centrar_texto(texto, tamanho, color):
 centrar_texto("Participación de las exportaciones año 2023 ",2, "white")
 
 # Pie chart, where the slices will be ordered and plotted counter-clockwise:
-labels = df6["Pais"]
-sizes = df6["Año 2023"]
+labels = df["Pais"]
+sizes = df["Año 2023"]
 colors = [ 'limegreen', 'yellow','dodgerblue', 'red', 'cyan', 'blueviolet', 'orange', 'magenta']
 
 plt.figure(figsize=(6, 6))
