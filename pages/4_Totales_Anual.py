@@ -10,14 +10,14 @@ st.set_page_config(
 )
 
 # Check if you've already initialized the data
-#if 'df2' not in st.session_state:
+if 'df3' not in st.session_state:
     # Get the data if you haven't
-df3 = pd.read_csv('datasets\exportaciones_anual_Totales.csv')
+    df3 = pd.read_csv('datasets/exportaciones_anual_Totales.csv')
     # Save the data to session state
-#    st.session_state.df2 = df2
+    st.session_state.df3 = df3
 
 # Retrieve the data from session state
-#df2 = st.session_state.df2
+df3 = st.session_state.df3
 
 page_bg_img = f"""
 <style>
@@ -62,7 +62,7 @@ def centrar_texto(texto, tamanho, color):
 # Filtros por país
 countries = st.sidebar.multiselect(
     "Seleccione una o dos regiones para comparar:  ",
-    options=df2['Total'].unique(),
+    options=df3['Total'].unique(),
     default=[]
 )
 
