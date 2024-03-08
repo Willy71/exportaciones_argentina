@@ -10,14 +10,14 @@ st.set_page_config(
 )
 
 # Check if you've already initialized the data
-#if 'df5' not in st.session_state:
+if 'df6' not in st.session_state:
     # Get the data if you haven't
-df6 = pd.read_csv('datasets\exportaciones_mensual_Totales.csv')
+    df6 = pd.read_csv('datasets\exportaciones_mensual_Totales.csv')
     # Save the data to session state
-#    st.session_state.df5 = df5
+    st.session_state.df6 = df6
 
 # Retrieve the data from session state
-#df5 = st.session_state.df5
+df6 = st.session_state.df6
 
 page_bg_img = f"""
 <style>
