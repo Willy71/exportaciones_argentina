@@ -19,7 +19,7 @@ df = pd.read_csv('datasets/exportaciones_anual_porcentaje.csv')
 #    st.session_state.df = df
 
 # Retrieve the data from session state
-df = st.session_state.df
+#df = st.session_state.df
 
 def centrar_imagen(imagen, ancho):
     # Aplicar estilo CSS para centrar la imagen con Markdown
