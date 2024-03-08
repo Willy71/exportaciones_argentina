@@ -47,3 +47,6 @@ plt.pie(sizes, labels=labels, shadow={'ox': -0.02, 'edgecolor': 'none', 'shade':
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 st.pyplot()
+
+centrar_texto("Indudablemente nuestro principal socio comercial es Brasil, por cercania lo cual significa menor costo de transporte y porque la produccion principal", 5, "white")
+centrar_texto("en el vecino pais es la soja, dejando el trigo para importacion desde nuestro pais, por ser este producto de mejor calidad en nuestras tierras.", 5, "white")
