@@ -10,14 +10,14 @@ st.set_page_config(
 )
 
 # Check if you've already initialized the data
-if 'df4' not in st.session_state:
+#if 'df4' not in st.session_state:
     # Get the data if you haven't
-    df4 = pd.read_csv('datasets\exportaciones_mensual_Region.csv')
+df5 = pd.read_csv('datasets\exportaciones_mensual_Region.csv')
     # Save the data to session state
-    st.session_state.df4 = df4
+#    st.session_state.df4 = df4
 
 # Retrieve the data from session state
-df4 = st.session_state.df4
+#df4 = st.session_state.df4
 
 page_bg_img = f"""
 <style>
@@ -62,12 +62,12 @@ def centrar_texto(texto, tamanho, color):
 # Filtros por país
 countries = st.sidebar.selectbox(
     "Seleccione una o dos regiones para comparar:  ",
-    options=df4['Region'].unique()
+    options=df5['Region'].unique()
 )
 
 
 # Aplicar filtro
-df_selection = df4[(df4["Region"] == countries)]
+df_selection = df5[(df5["Region"] == countries)]
 
 # Hacer melt de los datos
 df_melted = pd.melt(df_selection, id_vars=["Region"], var_name="Año", value_name="Valor")
