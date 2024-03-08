@@ -63,7 +63,7 @@ def centrar_texto(texto, tamanho, color):
 countries = st.sidebar.multiselect(
     "Seleccione una o dos regiones para comparar:  ",
     options=df2['Region'].unique(),
-    default=[]
+    default=['Mercosur']
 )
 
 if len(countries) > 2:
