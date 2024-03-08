@@ -10,14 +10,14 @@ st.set_page_config(
 )
 
 # Check if you've already initialized the data
-if 'df3' not in st.session_state:
+#if 'df3' not in st.session_state:
     # Get the data if you haven't
-    df3 = pd.read_csv('datasets\exportaciones_mensual_Pais.csv')
+df4 = pd.read_csv('datasets\exportaciones_mensual_Pais.csv')
     # Save the data to session state
-    st.session_state.df3 = df3
+#    st.session_state.df3 = df3
 
 # Retrieve the data from session state
-df3 = st.session_state.df3
+#df3 = st.session_state.df3
 
 page_bg_img = f"""
 <style>
@@ -63,12 +63,12 @@ def centrar_texto(texto, tamanho, color):
 
 countries = st.sidebar.selectbox(
     "Seleccione uno o dos países para comparar:  ",
-    options=df3['Pais'].unique()
+    options=df4['Pais'].unique()
 )
 
 
 # Aplicar filtro
-df_selection = df3[(df3["Pais"] == countries)]
+df_selection = df4[(df4["Pais"] == countries)]
 
 # Hacer melt de los datos
 df_melted = pd.melt(df_selection, id_vars=["Pais"], var_name="Año", value_name="Valor")
