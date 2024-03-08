@@ -12,7 +12,7 @@ st.set_page_config(
 # Check if you've already initialized the data
 #if 'df' not in st.session_state:
     # Get the data if you haven't
-df1 = pd.read_csv('datasets\exportaciones_anual_Pais.csv')
+df1 = pd.read_csv('datasets/exportaciones_anual_Pais.csv')
     # Save the data to session state
 #    st.session_state.df = df
 
