@@ -1,8 +1,9 @@
 pandas
-plotly
+plotly==5.19.0
 streamlit
 yfinance
 pandas-datareader
 prophet
 numpy
 matplotlib
+
